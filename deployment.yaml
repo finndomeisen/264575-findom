@@ -22,7 +22,7 @@ spec:
         - containerPort: 8080
           protocol: TCP
         # Hier ist dein spezifisches Image eingetragen:
-        image: ghcr.io/finndomeisen/html-openshift-app:v1
+        image: ghcr.io/finndomeisen/html-openshift-app:latest
         imagePullPolicy: Always
 ---
 kind: Service
