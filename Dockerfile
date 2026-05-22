@@ -1,3 +1,4 @@
 FROM nginxinc/nginx-unprivileged
+COPY index.html /usr/share/nginx/html/
 COPY index.html .
-EXPOSE 80
+EXPOSE 8080
