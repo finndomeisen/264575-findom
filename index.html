@@ -35,20 +35,23 @@
     </div>
 
     <script>
-        // Öffnet den Jumpscare bei Klick überall, außer auf dem Link
-        function handleGlobalClick(event) {
-            // Wenn der User auf den Link klickt, ignorieren wir das Event
-            if (event.target.closest('a')) return;
-
-            const overlay = document.getElementById('jumpscare-overlay');
-            if (overlay.classList.contains('hidden')) {
-                overlay.classList.remove('hidden');
-            }
+        // Zentrale Funktion zum Anzeigen des Bildes
+        function showJumpscare() {
+            document.getElementById('jumpscare-overlay').classList.remove('hidden');
         }
 
-        // Schließt den Jumpscare
+        // Timer: Nach 5000ms (5 Sekunden) ausführen
+        setTimeout(showJumpscare, 5000);
+
+        // Manuelles Auslösen bei Klick überall (außer auf Link)
+        function handleGlobalClick(event) {
+            if (event.target.closest('a')) return;
+            showJumpscare();
+        }
+
+        // Schließen bei Klick auf das Bild
         function closeJumpscare(event) {
-            event.stopPropagation(); // Verhindert, dass der Klick direkt wieder als "Öffnen" gewertet wird
+            event.stopPropagation();
             document.getElementById('jumpscare-overlay').classList.add('hidden');
         }
     </script>
