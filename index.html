@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon GO Hub | Tipps & Guides</title>
+    <style>
+        /* Basis-Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #1a437a;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 8px solid #e3350d;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #1a437a;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #e3350d;
+        }
+
+        /* Content Sections */
+        .section-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            color: #1a437a;
+            border-bottom: 3px solid #e3350d;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        /* Grid für Cards */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* Cards */
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .card h3 {
+            margin-bottom: 15px;
+            color: #e3350d;
+        }
+        .card ul {
+            list-style-type: none;
+        }
+        .card ul li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .card ul li::before {
+            content: "PokéBall";
+            position: absolute;
+            left: 0;
+            color: #e3350d;
+            font-size: 10px;
+            content: '🔴'; /* Simple Bullet */
+        }
+
+        /* Spezial Guide Box */
+        .guide-box {
+            background-color: #fff;
+            border-left: 6px solid #f1c40f;
+            padding: 25px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .guide-box h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .guide-box h4 {
+            margin-top: 20px;
+            color: #2980b9;
+        }
+        .highlight {
+            background-color: #fcf3cf;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pokémon GO Hub</h1>
+        <p>Dein direkter Guide ohne Bullshit: Tipps, Stats & Strategien</p>
+    </header>
+
+    <nav>
+        <a href="#tipps">Tipps & Tricks</a>
+        <a href="#bewertung">Pokémon bewerten</a>
+        <a href="#powerup">Entwicklung & Power-Up</a>
+    </nav>
+
+    <div class="section-container">
+        
+        <!-- Tipps Section -->
+        <h2 id="tipps" class="section-title">Tipps & Tricks</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Für Anfänger (Level 1 - 30)</h3>
+                <ul>
+                    <li><strong>Sternenstaub sparen:</strong> Gib auf keinen Fall Sternenstaub für Power-Ups aus, bevor du Level 30 erreicht hast! Du fängst später ohnehin stärkere Pokémon in der Wildnis.</li>
+                    <li><strong>Curveballs üben:</strong> Wirf immer Curveballs. Das erhöht die Fangchance drastisch und gibt mehr EP.</li>
+                    <li><strong>Münzen farmen:</strong> Setze Pokémon in Arenen, um täglich bis zu 50 kostenlose PokéMünzen zu verdienen.</li>
+                    <li><strong>Taschen-Management:</strong> Gib deine ersten PokéMünzen immer für Item-Beutel- und Pokémon-Aufbewahrungs-Upgrades aus. Kaufe keine Pokébälle!</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Für Fortgeschrittene (Level 30+)</h3>
+                <ul>
+                    <li><strong>Typen-Effektivität:</strong> Lerne die Stärken und Schwächen. Ein Pokémon mit dem richtigen Konter-Typ macht deutlich mehr Schaden im Raid als ein neutrales "starkes" Pokémon.</li>
+                    <li><strong>Wetter-Boost nutzen:</strong> Fange und raide bei passendem Wetter. Pokémon sind dann bis zu 5 Level höher (spart extrem viel Staub) und haben bessere Mindest-IVs.</li>
+                    <li><strong>Ressourcen bündeln:</strong> Nutze Sonderbonbons nur für Legendäre oder Mysteriöse Pokémon, da man mit diesen kaum laufen kann (20km pro Bonbon).</li>
+                    <li><strong>Schnellfang-Trick:</strong> Lerne den "Fast Catch Trick" (Ball-Menü gedrückt halten, werfen, fliehen), um an Community Days den Ertrag zu verdreifachen.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Guide: Bewertung & IVs -->
+        <h2 id="bewertung" class="section-title">Wie erkenne ich ein gutes Pokémon?</h2>
+        <div class="guide-box">
+            <h3>Das IV-System (Bewertung)</h3>
+            <p>Jedes Pokémon hat versteckte Werte von 0 bis 15 für <strong>Angriff</strong>, <strong>Verteidigung</strong> und <strong>KP</strong> (Lebenspunkte). Klicke im Spiel auf das Menü des Pokémon und dann auf "Bewertung".</p>
+            
+            <h4>Für Raids und Arenen (PvE)</h4>
+            <p>Hier gilt: Je näher an 15/15/15 (100% oder "Hundo", roter Stempel), desto besser. Besonders der <strong>Angriffswert</strong> sollte bei Raid-Angreifern auf 15 sein, um maximalen Schaden auszuteilen.</p>
+
+            <h4>Für Trainerkämpfe (PvP - Super- und Hyperliga)</h4>
+            <p>Achtung, Falle! In den Ligen mit WP-Limit (1500 oder 2500 WP) sind <span class="highlight">niedriger Angriff, aber hohe Verteidigung und KP</span> ideal (z.B. 0/15/15). Ein niedriger Angriffswert bläht die WP nicht künstlich auf, wodurch das Pokémon öfter Level-Ups erhalten kann, bevor es das WP-Limit erreicht. Es wird dadurch deutlich robuster ("bulky").</p>
+        </div>
+
+        <!-- Guide: Entwicklung vs Power Up -->
+        <h2 id="powerup" class="section-title">Wann entwickeln, wann pushen?</h2>
+        <div class="guide-box">
+            <h3>Die goldene Regel: Entwicklung VOR Power-Up</h3>
+            <p>Warum? Erst nach der Entwicklung siehst du, welches Attacken-Set dein Pokémon bekommt. Zwar kannst du heute TM-Items nutzen, um Attacken zu ändern, aber es ist pure Verschwendung, ein Pokémon erst hochzuleveln und dann zu merken, dass du teure TMs verbrauchen musst.</p>
+
+            <h4>Wann solltest du Power-Ups machen?</h4>
+            <p><strong>Nur bei Bedarf!</strong> Ein starkes Pokémon, das nur im Rucksack liegt, bringt dir nichts. Mache erst Power-Ups, wenn du das Pokémon genau *jetzt* für einen aktuellen Raid-Boss, einen Rocket-Boss oder ein PvP-Turnier brauchst.</p>
+
+            <h4>Achtung: Community Day Attacken!</h4>
+            <p>Entwickle sehr gute Pokémon (Starter-Pokémon, Metagross, Knakrack etc.) <span class="highlight">NICHT</span> sofort! Oft gibt es spezielle Events (Community Days), bei denen sie exklusive, extrem starke Attacken lernen, wenn sie genau in diesem Event-Zeitraum entwickelt werden. Wer zu früh entwickelt, braucht später eine sehr seltene "Top-Lade-TM". Geduld zahlt sich aus.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pokémon GO Fan-Template. Nicht offiziell mit Niantic oder Nintendo verbunden.</p>
+    </footer>
+
+</body>
+</html>
