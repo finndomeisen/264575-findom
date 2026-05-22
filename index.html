@@ -3,208 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokémon GO Hub | Tipps & Guides</title>
+    <title>PoGo Hub | Dein Pokémon GO Dashboard</title>
     <style>
-        /* Basis-Styling */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        :root {
+            --primary: #ffcb05; /* Pokemon Gelb */
+            --secondary: #3b4cca; /* Pokemon Blau */
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #f4f4f4;
+            --accent: #ff3b3b; /* Pokeball Rot */
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f8;
-            color: #333;
+            background-color: var(--darker);
+            color: var(--light);
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
         }
-
-        /* Header */
         header {
-            background-color: #1a437a;
-            color: #fff;
-            padding: 40px 20px;
+            background: linear-gradient(135deg, #1a2566, var(--secondary));
+            padding: 25px 0;
             text-align: center;
-            border-bottom: 8px solid #e3350d;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: #fff;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            border-bottom: 4px solid var(--primary);
             position: sticky;
             top: 0;
             z-index: 100;
         }
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
         nav a {
-            margin: 0 15px;
+            color: var(--light);
             text-decoration: none;
-            color: #1a437a;
-            font-weight: bold;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
         }
         nav a:hover {
-            color: #e3350d;
+            background-color: var(--primary);
+            color: var(--darker);
+            transform: translateY(-2px);
         }
-
-        /* Content Sections */
-        .section-container {
-            max-width: 1000px;
-            margin: 40px auto;
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
             padding: 0 20px;
         }
-        .section-title {
-            color: #1a437a;
-            border-bottom: 3px solid #e3350d;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-            font-size: 2rem;
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?q=80&w=2069&auto=format&fit=crop') center/cover;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 203, 5, 0.3);
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-
-        /* Grid für Cards */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        /* Cards */
-        .card {
-            background: #fff;
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .card h3 {
-            margin-bottom: 15px;
-            color: #e3350d;
-        }
-        .card ul {
-            list-style-type: none;
-        }
-        .card ul li {
-            margin-bottom: 12px;
-            padding-left: 20px;
-            position: relative;
-        }
-        .card ul li::before {
-            content: "PokéBall";
-            position: absolute;
-            left: 0;
-            color: #e3350d;
-            font-size: 10px;
-            content: '🔴'; /* Simple Bullet */
-        }
-
-        /* Spezial Guide Box */
-        .guide-box {
-            background-color: #fff;
-            border-left: 6px solid #f1c40f;
-            padding: 25px;
-            border-radius: 4px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .guide-box h3 {
-            color: #333;
+        .hero h2 {
+            font-size: 2.2rem;
+            color: var(--light);
             margin-bottom: 10px;
         }
-        .guide-box h4 {
-            margin-top: 20px;
-            color: #2980b9;
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
         }
-        .highlight {
-            background-color: #fcf3cf;
-            padding: 2px 6px;
-            border-radius: 4px;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: var(--dark);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border-top: 5px solid var(--secondary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+            border-top-color: var(--primary);
+        }
+        .card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card p {
+            color: #bbb;
+            flex-grow: 1;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
             font-weight: bold;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: #bdc3c7;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            margin-top: 20px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .btn:hover {
+            background: #e62e2e;
+            transform: scale(1.05);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--darker);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Pokémon GO Hub</h1>
-        <p>Dein direkter Guide ohne Bullshit: Tipps, Stats & Strategien</p>
-    </header>
-
+<header>
+    <h1>PoGo Hub</h1>
     <nav>
-        <a href="#tipps">Tipps & Tricks</a>
-        <a href="#bewertung">Pokémon bewerten</a>
-        <a href="#powerup">Entwicklung & Power-Up</a>
+        <a href="#">Home</a>
+        <a href="#">Raid-Bosse</a>
+        <a href="#">PvP Meta</a>
+        <a href="#">Events</a>
+        <a href="#">IV-Rechner</a>
     </nav>
+</header>
 
-    <div class="section-container">
-        
-        <!-- Tipps Section -->
-        <h2 id="tipps" class="section-title">Tipps & Tricks</h2>
-        <div class="grid-2">
-            <div class="card">
-                <h3>Für Anfänger (Level 1 - 30)</h3>
-                <ul>
-                    <li><strong>Sternenstaub sparen:</strong> Gib auf keinen Fall Sternenstaub für Power-Ups aus, bevor du Level 30 erreicht hast! Du fängst später ohnehin stärkere Pokémon in der Wildnis.</li>
-                    <li><strong>Curveballs üben:</strong> Wirf immer Curveballs. Das erhöht die Fangchance drastisch und gibt mehr EP.</li>
-                    <li><strong>Münzen farmen:</strong> Setze Pokémon in Arenen, um täglich bis zu 50 kostenlose PokéMünzen zu verdienen.</li>
-                    <li><strong>Taschen-Management:</strong> Gib deine ersten PokéMünzen immer für Item-Beutel- und Pokémon-Aufbewahrungs-Upgrades aus. Kaufe keine Pokébälle!</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Für Fortgeschrittene (Level 30+)</h3>
-                <ul>
-                    <li><strong>Typen-Effektivität:</strong> Lerne die Stärken und Schwächen. Ein Pokémon mit dem richtigen Konter-Typ macht deutlich mehr Schaden im Raid als ein neutrales "starkes" Pokémon.</li>
-                    <li><strong>Wetter-Boost nutzen:</strong> Fange und raide bei passendem Wetter. Pokémon sind dann bis zu 5 Level höher (spart extrem viel Staub) und haben bessere Mindest-IVs.</li>
-                    <li><strong>Ressourcen bündeln:</strong> Nutze Sonderbonbons nur für Legendäre oder Mysteriöse Pokémon, da man mit diesen kaum laufen kann (20km pro Bonbon).</li>
-                    <li><strong>Schnellfang-Trick:</strong> Lerne den "Fast Catch Trick" (Ball-Menü gedrückt halten, werfen, fliehen), um an Community Days den Ertrag zu verdreifachen.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Guide: Bewertung & IVs -->
-        <h2 id="bewertung" class="section-title">Wie erkenne ich ein gutes Pokémon?</h2>
-        <div class="guide-box">
-            <h3>Das IV-System (Bewertung)</h3>
-            <p>Jedes Pokémon hat versteckte Werte von 0 bis 15 für <strong>Angriff</strong>, <strong>Verteidigung</strong> und <strong>KP</strong> (Lebenspunkte). Klicke im Spiel auf das Menü des Pokémon und dann auf "Bewertung".</p>
-            
-            <h4>Für Raids und Arenen (PvE)</h4>
-            <p>Hier gilt: Je näher an 15/15/15 (100% oder "Hundo", roter Stempel), desto besser. Besonders der <strong>Angriffswert</strong> sollte bei Raid-Angreifern auf 15 sein, um maximalen Schaden auszuteilen.</p>
-
-            <h4>Für Trainerkämpfe (PvP - Super- und Hyperliga)</h4>
-            <p>Achtung, Falle! In den Ligen mit WP-Limit (1500 oder 2500 WP) sind <span class="highlight">niedriger Angriff, aber hohe Verteidigung und KP</span> ideal (z.B. 0/15/15). Ein niedriger Angriffswert bläht die WP nicht künstlich auf, wodurch das Pokémon öfter Level-Ups erhalten kann, bevor es das WP-Limit erreicht. Es wird dadurch deutlich robuster ("bulky").</p>
-        </div>
-
-        <!-- Guide: Entwicklung vs Power Up -->
-        <h2 id="powerup" class="section-title">Wann entwickeln, wann pushen?</h2>
-        <div class="guide-box">
-            <h3>Die goldene Regel: Entwicklung VOR Power-Up</h3>
-            <p>Warum? Erst nach der Entwicklung siehst du, welches Attacken-Set dein Pokémon bekommt. Zwar kannst du heute TM-Items nutzen, um Attacken zu ändern, aber es ist pure Verschwendung, ein Pokémon erst hochzuleveln und dann zu merken, dass du teure TMs verbrauchen musst.</p>
-
-            <h4>Wann solltest du Power-Ups machen?</h4>
-            <p><strong>Nur bei Bedarf!</strong> Ein starkes Pokémon, das nur im Rucksack liegt, bringt dir nichts. Mache erst Power-Ups, wenn du das Pokémon genau *jetzt* für einen aktuellen Raid-Boss, einen Rocket-Boss oder ein PvP-Turnier brauchst.</p>
-
-            <h4>Achtung: Community Day Attacken!</h4>
-            <p>Entwickle sehr gute Pokémon (Starter-Pokémon, Metagross, Knakrack etc.) <span class="highlight">NICHT</span> sofort! Oft gibt es spezielle Events (Community Days), bei denen sie exklusive, extrem starke Attacken lernen, wenn sie genau in diesem Event-Zeitraum entwickelt werden. Wer zu früh entwickelt, braucht später eine sehr seltene "Top-Lade-TM". Geduld zahlt sich aus.</p>
-        </div>
-
+<div class="container">
+    <div class="hero">
+        <h2>Dein ultimatives Pokémon GO Toolkit</h2>
+        <p>Live-Events, IV-Rechner, aktuelle Raid-Bosse und Meta-Rankings für die Kampfliga. Alles zentral an einem Ort.</p>
+        <a href="#" class="btn btn-outline">Aktuelle Events checken</a>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Pokémon GO Fan-Template. Nicht offiziell mit Niantic oder Nintendo verbunden.</p>
-    </footer>
+    <div class="grid">
+        <div class="card">
+            <h3>🔴 5-Sterne Raids</h3>
+            <p>Finde heraus, welche Legendären Pokémon aktuell in den Eiern schlüpfen und welche Konter-Teams den meisten Schaden drücken.</p>
+            <a href="#" class="btn">Zu den Raid-Guides</a>
+        </div>
+        <div class="card">
+            <h3>⚔️ PvP Meta & Rankings</h3>
+            <p>Die besten Teams für die Superliga, Hyperliga und Meisterliga. Simuliere Matchups und checke die Win-Rates deiner Pokémon.</p>
+            <a href="#" class="btn">Meta-Listen ansehen</a>
+        </div>
+        <div class="card">
+            <h3>⏱️ Event Countdown</h3>
+            <p>Verpasse nie wieder einen Community Day, eine Rampenlicht-Stunde oder den Start eines neuen Rocket-Takeovers.</p>
+            <a href="#" class="btn">Kalender öffnen</a>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
