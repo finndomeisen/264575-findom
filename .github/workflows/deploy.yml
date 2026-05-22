@@ -1,4 +1,4 @@
-name: Build and Push
+name: Build, Push and Deploy
 
 on:
   push:
@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 1. Login zur GitHub Registry
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -20,9 +21,22 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.CR_PAT }}
 
+      # 2. Build und Push
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
           tags: ghcr.io/finndomeisen/html-openshift-app:latest
+
+      # 3. OpenShift CLI installieren
+      - name: Install OpenShift CLI
+        uses: redhat-actions/oc-installer@v1
+        with:
+          version: latest
+
+      # 4. Bei OpenShift einloggen und Deployment neu starten
+      - name: Deploy to OpenShift
+        run: |
+          ${{ secrets.OC_LOGIN_COMMAND }}
+          oc rollout restart deployment/html-openshift-app
