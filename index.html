@@ -16,31 +16,42 @@
                  class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-gray-100 shadow-md object-cover">
 
             <h1 class="text-3xl font-bold text-gray-900">Ngoc-Phuc Nguyen</h1>
-            
             <p class="text-lg text-blue-600 font-medium mt-2">Ausbildner Applikationsentwicklung</p>
-            
             <p class="text-gray-600 mt-1">Noser Young</p>
 
-            <div class="mt-8">
+            <div class="mt-8 flex flex-col gap-4 items-center">
                 <a href="https://ch.linkedin.com/in/ngoc-phuc-nguyen-54a645201" 
                    class="inline-block bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition">
                    LinkedIn Profil
                 </a>
+                <button onclick="toggleJumpscare()" 
+                        class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition font-bold">
+                        Überraschung!
+                </button>
             </div>
         </div>
 
         <div class="bg-white shadow-lg rounded-xl p-6">
             <h2 class="text-xl font-bold mb-4 text-gray-800 border-b pb-2">Impressionen</h2>
-            <div class="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide snap-x">
-                <img src="img/guggggi.jpg" class="h-48 rounded-lg shadow-sm border border-gray-100 flex-shrink-0 snap-start">
-                <img src="img/gugggi.jpg" class="h-48 rounded-lg shadow-sm border border-gray-100 flex-shrink-0 snap-start">
+            <div class="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide snap-x justify-center">
                 <img src="img/guggi.jpg" class="h-48 rounded-lg shadow-sm border border-gray-100 flex-shrink-0 snap-start">
-                <img src="img/gugi.jpg" class="h-48 rounded-lg shadow-sm border border-gray-100 flex-shrink-0 snap-start">
+                <img src="img/guggi.jpg" class="h-48 rounded-lg shadow-sm border border-gray-100 flex-shrink-0 snap-start">
             </div>
-            <p class="text-xs text-gray-400 mt-2 text-center">Seitlich scrollen für mehr Bilder</p>
         </div>
-
     </div>
+
+    <div id="jumpscare-overlay" 
+         class="fixed inset-0 z-50 bg-black flex items-center justify-center hidden cursor-pointer" 
+         onclick="toggleJumpscare()">
+        <img src="img/gugggi.jpg" class="max-h-screen max-w-full p-4">
+    </div>
+
+    <script>
+        function toggleJumpscare() {
+            const overlay = document.getElementById('jumpscare-overlay');
+            overlay.classList.toggle('hidden');
+        }
+    </script>
 
 </body>
 </html>
