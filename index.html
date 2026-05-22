@@ -6,7 +6,7 @@
     <title>Ngoc-Phuc Nguyen</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-900 min-h-screen p-4 md:p-8 flex items-center justify-center">
+<body class="bg-gray-50 text-gray-900 min-h-screen p-4 md:p-8 flex items-center justify-center" onclick="handleGlobalClick(event)">
 
     <div class="max-w-md w-full space-y-8">
         
@@ -19,29 +19,37 @@
             <p class="text-lg text-blue-600 font-medium mt-2">Ausbildner Applikationsentwicklung</p>
             <p class="text-gray-600 mt-1">Noser Young</p>
 
-            <div class="mt-8 flex flex-col gap-4 items-center">
+            <div class="mt-8 flex justify-center">
                 <a href="https://ch.linkedin.com/in/ngoc-phuc-nguyen-54a645201" 
                    class="inline-block bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition">
                    LinkedIn Profil
                 </a>
-                <button onclick="toggleJumpscare()" 
-                        class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition font-bold">
-                        Überraschung!
-                </button>
             </div>
         </div>
     </div>
 
     <div id="jumpscare-overlay" 
          class="fixed inset-0 z-50 bg-black flex items-center justify-center hidden cursor-pointer" 
-         onclick="toggleJumpscare()">
-        <img src="img/gugi.jpg" class="max-h-screen max-w-full p-4">
+         onclick="closeJumpscare(event)">
+        <img src="img/gugggi.jpg" class="max-h-screen max-w-full p-4">
     </div>
 
     <script>
-        function toggleJumpscare() {
+        // Öffnet den Jumpscare bei Klick überall, außer auf dem Link
+        function handleGlobalClick(event) {
+            // Wenn der User auf den Link klickt, ignorieren wir das Event
+            if (event.target.closest('a')) return;
+
             const overlay = document.getElementById('jumpscare-overlay');
-            overlay.classList.toggle('hidden');
+            if (overlay.classList.contains('hidden')) {
+                overlay.classList.remove('hidden');
+            }
+        }
+
+        // Schließt den Jumpscare
+        function closeJumpscare(event) {
+            event.stopPropagation(); // Verhindert, dass der Klick direkt wieder als "Öffnen" gewertet wird
+            document.getElementById('jumpscare-overlay').classList.add('hidden');
         }
     </script>
 
