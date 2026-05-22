@@ -3,185 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoGo Hub | Dein Pokémon GO Dashboard</title>
-    <style>
-        :root {
-            --primary: #ffcb05; /* Pokemon Gelb */
-            --secondary: #3b4cca; /* Pokemon Blau */
-            --dark: #121212;
-            --darker: #0a0a0a;
-            --light: #f4f4f4;
-            --accent: #ff3b3b; /* Pokeball Rot */
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--darker);
-            color: var(--light);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #1a2566, var(--secondary));
-            padding: 25px 0;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-            border-bottom: 4px solid var(--primary);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 8px 18px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.05);
-        }
-        nav a:hover {
-            background-color: var(--primary);
-            color: var(--darker);
-            transform: translateY(-2px);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?q=80&w=2069&auto=format&fit=crop') center/cover;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 203, 5, 0.3);
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .hero h2 {
-            font-size: 2.2rem;
-            color: var(--light);
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: #ccc;
-            max-width: 600px;
-            margin: 0 auto 25px auto;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        .card {
-            background: var(--dark);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            border-top: 5px solid var(--secondary);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.6);
-            border-top-color: var(--primary);
-        }
-        .card h3 {
-            color: var(--primary);
-            margin-top: 0;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .card p {
-            color: #bbb;
-            flex-grow: 1;
-        }
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: #fff;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 20px;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-        .btn:hover {
-            background: #e62e2e;
-            transform: scale(1.05);
-        }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        .btn-outline:hover {
-            background: var(--primary);
-            color: var(--darker);
-        }
-    </style>
+    <title>Portfolio | Ngoc-Phuc Nguyen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900">
 
-<header>
-    <h1>PoGo Hub</h1>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Raid-Bosse</a>
-        <a href="#">PvP Meta</a>
-        <a href="#">Events</a>
-        <a href="#">IV-Rechner</a>
-    </nav>
-</header>
+    <header class="bg-white shadow-sm p-6 text-center">
+        <h1 class="text-3xl font-bold">Ngoc-Phuc Nguyen</h1>
+        <p class="text-gray-600 mt-2">[Aktuelle Job-Rolle / Titel hier einfügen]</p>
+    </header>
 
-<div class="container">
-    <div class="hero">
-        <h2>Dein ultimatives Pokémon GO Toolkit</h2>
-        <p>Live-Events, IV-Rechner, aktuelle Raid-Bosse und Meta-Rankings für die Kampfliga. Alles zentral an einem Ort.</p>
-        <a href="#" class="btn btn-outline">Aktuelle Events checken</a>
-    </div>
+    <main class="max-w-4xl mx-auto p-6">
+        
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Über mich</h2>
+            <p class="text-gray-700 leading-relaxed">
+                [Kurze Zusammenfassung der beruflichen Laufbahn, Schwerpunkte und Interessen basierend auf LinkedIn hier einfügen.]
+            </p>
+        </section>
 
-    <div class="grid">
-        <div class="card">
-            <h3>🔴 5-Sterne Raids</h3>
-            <p>Finde heraus, welche Legendären Pokémon aktuell in den Eiern schlüpfen und welche Konter-Teams den meisten Schaden drücken.</p>
-            <a href="#" class="btn">Zu den Raid-Guides</a>
-        </div>
-        <div class="card">
-            <h3>⚔️ PvP Meta & Rankings</h3>
-            <p>Die besten Teams für die Superliga, Hyperliga und Meisterliga. Simuliere Matchups und checke die Win-Rates deiner Pokémon.</p>
-            <a href="#" class="btn">Meta-Listen ansehen</a>
-        </div>
-        <div class="card">
-            <h3>⏱️ Event Countdown</h3>
-            <p>Verpasse nie wieder einen Community Day, eine Rampenlicht-Stunde oder den Start eines neuen Rocket-Takeovers.</p>
-            <a href="#" class="btn">Kalender öffnen</a>
-        </div>
-    </div>
-</div>
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Berufserfahrung</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="font-bold text-lg">[Job Titel]</h3>
+                    <p class="text-sm text-gray-500">[Firma] | [Zeitraum]</p>
+                    <p class="mt-2 text-gray-700">[Kurze Beschreibung der Aufgaben und Erfolge.]</p>
+                </div>
+                </div>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Skills</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Skill 1</span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Skill 2</span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Skill 3</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 text-gray-500 text-sm">
+        <p>&copy; 2026 Ngoc-Phuc Nguyen | <a href="[LINKEDIN_URL_HIER]" class="underline">LinkedIn Profil</a></p>
+    </footer>
 
 </body>
 </html>
