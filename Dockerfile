@@ -1,4 +1,3 @@
-FROM nginx:latest
-WORKDIR /usr/share/nginx/html
+FROM nginxinc/nginx-unprivileged
 COPY index.html .
 EXPOSE 80
